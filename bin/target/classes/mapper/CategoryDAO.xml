@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.CategoryDAO">
+    <!--参数和DAO里面方法参数对应-->
+
+    <select id="addCategory" parameterType="Category" >
+        INSERT INTO category (categoryname)
+        VALUES (#{categoryName})
+    </select>
+
+    <select id="getCategoryList" resultType="Category">
+        SELECT * FROM category
+    </select>
+
+    <select id="updateCategory" parameterType="int" resultType="boolean">
+        UPDATE article SET categoryname=#{categoryName}  WHERE id=#{id}
+    </select>
+
+    <select id="deleteCategory"  parameterType="int">
+        DELETE  FROM category WHERE id=#{id}
+    </select>
+
+</mapper>

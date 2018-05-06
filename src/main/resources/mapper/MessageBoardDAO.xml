@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.MessageBoardDAO">
+    <select id="getMessageList" resultType="MessageBoard" parameterType="String">
+        SELECT * FROM messageboard WHERE username=#{userName} ORDER  BY time ASC
+    </select>
+
+    <select id="getMessageListWithNothing" resultType="MessageBoard" >
+        SELECT * FROM messageboard
+    </select>
+
+    <select id="addMessage"  parameterType="MessageBoard">
+       INSERT  INTO  messageboard (content,username)VALUES (#{content},#{userName})
+    </select>
+
+    <select id="deleteMessage" parameterType="int" >
+        delete FROM messageboard where id=#{id}
+    </select>
+
+</mapper>

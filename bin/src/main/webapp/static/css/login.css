@@ -1,0 +1,21 @@
+body {
+    background:url(/static/img/login_bg.jpg) #f8f6e9;
+}
+.myCenter{
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 350px;
+    width:500px;
+    padding: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.myCenter mySign{
+    width: 440px;
+}
+.myCenter input,button{
+    margin-top:2%;
+    margin-left: 10%;
+    margin-right: 10%;
+}

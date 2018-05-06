@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.ArticleDAO">
+    <!--参数和DAO里面方法参数对应-->
+    <select id="addArticle" parameterType="Article" >
+        INSERT INTO article (title, content, categoryname,username )
+        VALUES (#{title},#{content},#{categoryName},#{userName})
+    </select>
+
+    <select id="getArticleList" resultType="Article" >
+        SELECT * FROM article  ORDER  BY time ASC
+    </select>
+
+    <!--查询该博客主的所有博客-->
+    <select id="getArticleListByName" resultType="Article" parameterType="String">
+        SELECT * FROM article where username=#{userName} ORDER  BY time ASC
+    </select>
+
+    <select id="getRankByTime" resultType="Article">
+        SELECT * FROM article  ORDER  BY time ASC
+    </select>
+
+    <!--查询该分类下的所有博客-->
+    <select id="getLifeArticleList" resultType="Article" parameterType="String">
+        SELECT * FROM article where categoryname=#{categoryName} ORDER  BY time ASC
+    </select>
+
+    <select id="updateArticle" parameterType="Article" >
+        UPDATE article SET title=#{title},content=#{content},categoryname=#{categoryName}  WHERE id=#{id}
+    </select>
+
+    <select id="deleteArticle"  parameterType="int">
+        DELETE  FROM article WHERE id=#{id}
+    </select>
+
+    <select id="getArticleById" resultType="Article" parameterType="int">
+        SELECT * FROM article where id=#{id}
+    </select>
+
+</mapper>

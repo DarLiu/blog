@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--<configuration>-->
+    <!--<settings>-->
+        <!--&lt;!&ndash;使用jdbc的getGeneratedKeys获取数据库自增主键值  &ndash;&gt;-->
+        <!--<setting name="useGeneratedKeys" value="true"/>-->
+        <!--&lt;!&ndash; 使用列别名替换列名   默认：true-->
+            <!--select name as title from table-->
+         <!--&ndash;&gt;-->
+        <!--<setting name="useColumnLabel" value="true"/>-->
+        <!--&lt;!&ndash; 开启驼峰命名转换：Table(create_time) -> Entity(createTime) &ndash;&gt;-->
+        <!--<setting name="mapUnderscoreToCamelCase" value="true"/>-->
+    <!--</settings>-->
+<!--</configuration>-->
+
+<configuration>
+    <!-- 别名定义 -->
+    <typeAliases>
+        <package name="model.Admin" />
+    </typeAliases>
+</configuration>
